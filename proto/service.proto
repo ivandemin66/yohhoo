@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package stream;
+
+service StreamService {
+  rpc StartStream(StreamRequest) returns (StreamResponse);
+  rpc EndStream(StreamRequest) returns (StreamResponse);
+}
+
+message StreamRequest {
+  string user_id = 1;
+  string stream_id = 2;
+}
+
+message StreamResponse {
+  string status = 1;
+  string message = 2;
+}
